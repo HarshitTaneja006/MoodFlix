@@ -13,8 +13,7 @@ A mood-based movie discovery web application with a playful cartoon/comic-style 
 - **Search History**: Keep track of your mood searches and easily repeat them
 - **Movie Details**: View comprehensive movie information including cast, rating, and trailer links
 - **Responsive Design**: Works beautifully on desktop, tablet, and mobile devices
-- **Demo Mode**: Works out of the box with sample data (no API key required to try!)
-
+  
 ## 🚀 Quick Start
 
 ### 1. Clone or Download
