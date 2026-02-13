@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>My Favorites - MoodFlix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a class="logo-link" href="index.html">
+                <span class="material-symbols-outlined logo-icon">movie_filter</span>
+                <span class="logo-text">MoodFlix</span>
+            </a>
+            <div class="nav-links">
+                <a class="nav-pill" href="index.html">Home</a>
+                <a class="nav-pill active" href="favorites.html">
+                    Favorites
+                    <span class="nav-badge" id="favoritesCount">0</span>
+                </a>
+                <a class="nav-pill" href="history.html">History</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="history.html">History</a>
+    </div>
+
+    <main class="main-content">
+        <!-- Favorites Header -->
+        <div class="favorites-header">
+            <div>
+                <h1 class="favorites-title">My Favorites</h1>
+                <p class="favorites-subtitle">Your personalized collection of cinematic gems.</p>
+            </div>
+            <button class="btn-clear-all" id="clearAllBtn">
+                <span class="material-symbols-outlined">restart_alt</span>
+                Clear All
+            </button>
+        </div>
+
+        <!-- Movies Grid -->
+        <div class="movies-grid" id="moviesGrid">
+            <!-- Favorites will be loaded here -->
+        </div>
+    </main>
+
+    <!-- Movie Modal -->
+    <div class="modal-overlay hidden" id="movieModal">
+        <div class="modal-content">
+            <button class="modal-close-btn" id="modalCloseBtn">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            
+            <div class="modal-backdrop" id="modalBackdrop"></div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="material-symbols-outlined">movie_filter</span>
+                <span>© 2026 MoodFlix</span>
+            </div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/favorites.js"></script>
+</body>
+</html>

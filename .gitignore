@@ -1,0 +1,6 @@
+.vscode
+
+stitch_screens
+config.js
+.DS_Store
+*.log

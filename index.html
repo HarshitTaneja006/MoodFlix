@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>MoodFlix - Discover Movies by Mood</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a class="logo-link" href="index.html">
+                <span class="material-symbols-outlined logo-icon">movie_filter</span>
+                <span class="logo-text">MoodFlix</span>
+            </a>
+            <div class="nav-links">
+                <a class="nav-pill active" href="index.html">Home</a>
+                <a class="nav-pill" href="favorites.html">
+                    Favorites
+                    <span class="nav-badge" id="favoritesCount">0</span>
+                </a>
+                <a class="nav-pill" href="history.html">History</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="history.html">History</a>
+    </div>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">
+                How are you <span class="highlight">feeling<svg class="underline-svg" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" stroke-width="4"></path></svg></span> today?
+            </h1>
+            <p class="hero-subtitle">
+                Describe your mood and let our AI discover the perfect cinematic experience for you.
+            </p>
+            
+            <!-- Mood Input -->
+            <div class="mood-input-container">
+                <div class="ai-badge">
+                    <span class="material-symbols-outlined">auto_awesome</span>
+                </div>
+                <div class="input-wrapper">
+                    <textarea 
+                        id="moodInput" 
+                        class="mood-textarea" 
+                        placeholder="I want something mysterious and visually stunning, maybe set in space..."
+                        maxlength="200"
+                    ></textarea>
+                    <div class="char-counter"><span id="charCount">0</span>/200</div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="actions-container">
+                <button class="btn-primary" id="findMoviesBtn">
+                    <span class="material-symbols-outlined">search</span>
+                    Find Movies
+                </button>
+                
+                <!-- Detected Genres -->
+                <div class="genres-container" id="genresContainer">
+                    <span class="genres-label">Detected Genres:</span>
+                    <div class="genres-tags" id="genresTags">
+                        <!-- Genres will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading State -->
+        <div class="loading-container hidden" id="loadingContainer">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Finding perfect movies for your mood...</p>
+        </div>
+
+        <!-- Movies Section -->
+        <section class="movies-section hidden" id="moviesSection">
+            <div class="movies-header">
+                <h2 class="movies-title">Recommended for you</h2>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid" id="gridViewBtn">
+                        <span class="material-symbols-outlined">grid_view</span>
+                    </button>
+                    <button class="view-btn" data-view="list" id="listViewBtn">
+                        <span class="material-symbols-outlined">list</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="movies-grid" id="moviesGrid">
+                <!-- Movie cards will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Movie Modal -->
+    <div class="modal-overlay hidden" id="movieModal">
+        <div class="modal-content">
+            <button class="modal-close-btn" id="modalCloseBtn">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            
+            <!-- Modal content will be dynamically populated -->
+            <div class="modal-backdrop" id="modalBackdrop"></div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
