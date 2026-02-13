@@ -42,7 +42,7 @@ const API = {
      */
     getPosterUrl(path, size = 'medium') {
         if (!path) {
-            return 'https://via.placeholder.com/342x513/1e182a/ffffff?text=No+Poster';
+            return 'https://placehold.co/342x513/1e182a/ffffff?text=No+Poster';
         }
         const sizeValue = CONFIG.IMAGE_SIZES.poster[size] || CONFIG.IMAGE_SIZES.poster.medium;
         return `${CONFIG.TMDB_IMAGE_BASE_URL}/${sizeValue}${path}`;
@@ -56,7 +56,7 @@ const API = {
      */
     getBackdropUrl(path, size = 'large') {
         if (!path) {
-            return 'https://via.placeholder.com/1280x720/1e182a/ffffff?text=No+Backdrop';
+            return 'https://placehold.co/1280x720/1e182a/ffffff?text=No+Backdrop';
         }
         const sizeValue = CONFIG.IMAGE_SIZES.backdrop[size] || CONFIG.IMAGE_SIZES.backdrop.large;
         return `${CONFIG.TMDB_IMAGE_BASE_URL}/${sizeValue}${path}`;
@@ -70,7 +70,7 @@ const API = {
      */
     getProfileUrl(path, size = 'medium') {
         if (!path) {
-            return 'https://via.placeholder.com/185x278/1e182a/ffffff?text=No+Photo';
+            return 'https://placehold.co/185x278/1e182a/ffffff?text=No+Photo';
         }
         const sizeValue = CONFIG.IMAGE_SIZES.profile[size] || CONFIG.IMAGE_SIZES.profile.medium;
         return `${CONFIG.TMDB_IMAGE_BASE_URL}/${sizeValue}${path}`;
